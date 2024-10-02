@@ -10,4 +10,14 @@ router.get('/about', function(req, res, next) {
   res.render('about', { title: 'About Us' });
 });
 
+router.get('/contact', function(req, res, next) {
+  res.render('contact', { title: 'Contact Us' });
+});
+
+router.post('/submit-contact', (req, res) => {
+  const { name, email, message } = req.body;
+  console.log('Name: ${name}, Email: ${email}, Message: ${message}');
+  res.render('thank-you', {title: 'Thank You', name : name});
+})
+
 module.exports = router;
