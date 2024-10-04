@@ -25,3 +25,12 @@ function hitungTotalHarga() {
     document.getElementById('harga').innerText = `Harga Per Orang : Rp ${harga}`;
     document.getElementById('hargaTotal').innerText = `Total harga : Rp ${totalHarga}`;
 }
+
+function toggleInfo(element) {
+    const informasi = element.nextElementSibling;
+    if (informasi.style.display === "none") {
+        informasi.style.display = "block";
+    } else {
+        informasi.style.display = "none";
+    }
+}
