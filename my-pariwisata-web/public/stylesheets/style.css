@@ -31,30 +31,40 @@ h2 {
   color: #34495e;
 }
 
-table {
+.list-group {
+  display: flex;
+  flex-wrap: wrap;
   width: 100%;
-  border-collapse: collapse;
-  margin: 20px 0;
+  padding: 0;
 }
 
-table, th, td {
-  border: 1px solid #ddd;
-}
-
-th, td {
+.list-group-item {
+  flex: 1 0 30%;
+  box-sizing: border-box;
+  text-align: center;
+  margin: 0;
+  border: none;
   padding: 10px;
-  text-align: left;
+  min-height: 100px;
+  background-color: #f8f9fa;
+  outline: 1px solid #a1a1a1;
 }
 
-th {
-  background-color: #3498db;
-  color: white;
+h5 {
+  padding-top:10px;
 }
 
-tbody tr:nth-child(even) {
-  background-color: #f2f2f2;
+img {
+  width:100%;
+  border-radius: 5px;
 }
 
-ul, ol {
-  margin-left: 20px;
+.infoSelengkapnya {
+  cursor: pointer;
+  color: blue;
+  text-decoration: underline;
+}
+
+.informasi {
+  margin-top: 10px;
 }

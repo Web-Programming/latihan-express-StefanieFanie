@@ -15,7 +15,11 @@ router.get('/orderpaket', function(req, res, next) {
 });
 
 router.post('/orderdetail', function(req, res, next) {
-  res.render('orderdetail', { title: 'Detail Pemesanan Paket' });
+  const { nama, email, selectPaketWisata, jumlah, hargaTotal } = req.body;
+  res.render('orderdetail', { 
+    title: 'Detail Pemesanan Paket', 
+    orderDetails: { nama, email, selectPaketWisata, jumlah, hargaTotal } 
+  });
 });
 
 module.exports = router;

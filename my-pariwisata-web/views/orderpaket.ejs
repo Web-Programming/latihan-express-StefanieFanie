@@ -2,19 +2,43 @@
   {
     title: title,
     body: `
-    <h1>Order Paket Wisata</h1>
-    <div class="mb-3 row">
-        <label for="Nama Paket" class="col-sm-2 col-form-label">Email</label>
-        <div class="col-sm-10">
-          <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="email@example.com">
-        </div>
+    <h1>Form Order Paket Wisata</h1>
+    <form action="/orderdetail" oninput="hitungTotalHarga()" method="POST">
+      <div class="mb-3">
+        <label for="nama" class="form-label">Nama</label>
+        <input type="text" class="form-control" id="nama" name="nama" placeholder="Masukkan nama Anda" required>
       </div>
-      <div class="mb-3 row">
-        <label for="inputPassword" class="col-sm-2 col-form-label">Password</label>
-        <div class="col-sm-10">
-          <input type="password" class="form-control" id="inputPassword">
-        </div>
+      <div class="mb-3">
+        <label for="email" class="form-label">Email</label>
+        <input type="email" class="form-control" id="email" name="email" placeholder="Masukkan email Anda" required>
       </div>
+      <div class="mb-3">
+        <label for="selectPaketWisata" class="form-label">Paket Wisata</label>
+        <select class="form-select" id="selectPaketWisata" name="selectPaketWisata" aria-label="Default select example">
+          <option value="paket1">Paket Jelajah Palembang</option>
+          <option value="paket2">Paket Palembang City Tour</option>
+          <option value="paket3">Paket Free and Easy Palembang Tour</option>
+          <option value="paket4">Paket Eksplorasi Palembang</option>
+          <option value="paket5">Paket Wisata Ceria Palembang</option>
+          <option value="paket6">Paket Wisata dan Kuliner Palembang</option>
+        </select>
+      </div>
+      <div class="mb-3">
+        <label for="jumlah" class="form-label">Jumlah</label>
+        <input type="number" class="form-control" id="jumlah" name="jumlah" placeholder="Masukkan jumlah paket yang ingin dipesan" required>
+      </div>
+      <div class="mb-3">
+        <label for="harga" class="form-label">Harga per Orang</label>
+        <input type="number" class="form-control" id="harga" name="harga" readonly>
+      </div>
+      <div class="mb-3">
+        <label for="hargaTotal" class="form-label">Total Harga</label>
+        <input type="number" class="form-control" id="hargaTotal" name="hargaTotal" readonly>
+      </div>
+      <div class="mb-3">
+        <button type="submit" class="btn btn-outline-dark">Order Paket dan Lihat Detail Order</button><br><br>
+      </div>
+    </form>
     `
   })
 %>
