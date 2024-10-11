@@ -1,94 +1,19 @@
 <h1>Paket Wisata</h1>
-    <div class="container">
-        <p>Temukan pengalaman liburan terbaik dengan paket wisata kami!</p>
-        <ul class="list-group list-group-horizontal-md">
-            <li class="list-group-item">
-              <img src="/images/Ampera.jpg" alt="Ampera">
-              <h5>Paket Jelajah Palembang</h5>
-              <p><b>Harga Paket</b><br>Rp 2.700.000 / orang</p>
-              <div class="infoSelengkapnya" onclick="toggleInfo(this)">
-                Informasi selengkapnya
-              </div>
-              <p id="infoPaket1" class="informasi" style="display: none;">
-                <b>Durasi :</b> 3 hari 2 malam<br>
-                <b>Wisata :</b> Jembatan Ampera - Jakabaring - Pulau Kemaro - Museum AlQuran - Masjid Cheng Ho - Taman Purbakala - Museum SMB II - Benteng Kuto Besak<br>
-                <b>Harga termasuk penginapan hotel</b>
-              </p>
-            </li>
-            <li class="list-group-item">
-              <img src="/images/SungaiMusi.jpg" alt="Sungai Musi">
-              <h5>Paket Palembang City Tour</h5>
-              <p><b>Harga Paket</b><br>Rp 2.500.000 / orang</p>
-              <div class="infoSelengkapnya" onclick="toggleInfo(this)">
-                Informasi selengkapnya
-              </div>
-              <p id="infoPaket2" class="informasi" style="display: none;">
-                <b>Durasi :</b> 2 hari<br>
-                <b>Wisata :</b> Musi Tour, Ampera, Monpera, JSC, dan beberapa mall di Palembang<br>
-                <b>Restoran :</b> RiverSide, Bumbu Desa, Sri Melayu<br>
-                <b>Harga termasuk penginapan hotel</b>
-              </p>
-            </li>
-            <li class="list-group-item">
-              <img src="/images/PulauKemaro.jpg" alt="Pulau Kemaro">
-              <h5>Paket Free and Easy Palembang Tour</h5>
-              <p><b>Harga Paket</b><br>Rp 4.500.000 / orang</p>
-              <div class="infoSelengkapnya" onclick="toggleInfo(this)">
-                Informasi selengkapnya
-              </div>
-              <p id="infoPaket3" class="informasi" style="display: none;">
-                <b>Durasi :</b> 3 hari 2 malam<br>
-                <b>Wisata :</b> Pulau Kemaro - Jembatan Ampera - Museum SMB II - Benteng Kuto Besak<br>
-                <b>Lunch :</b> All You Can Eat Concept<br>
-                <b>Harga termasuk penginapan hotel bintang 5 + breakfast, tour guide, transportation</b>
-              </p>
-            </li>
-            <li class="list-group-item">
-              <img src="/images/GWalk.jpg" alt="GWalk">
-              <h5>Paket Eksplorasi Palembang</h5>
-              <p><b>Harga Paket</b><br>Rp 4.000.000 / orang</p>
-              <div class="infoSelengkapnya" onclick="toggleInfo(this)">
-                Informasi selengkapnya
-              </div>
-              <p id="infoPaket4" class="informasi" style="display: none;">
-                <b>Durasi :</b> 3 hari 2 malam<br>
-                <b>Wisata :</b> GWalk - Jakabaring - Benteng Kuto Besak - Museum SMB II - Museum AlQuran - Masjid Cheng Ho - Pulau Kemaro - Pagoda<br>
-                <b>Lunch :</b> All You Can Eat Concept<br>
-                <b>Harga termasuk penginapan hotel bintang 4 + breakfast, tour guide</b>
-              </p>
-            </li>
-            <li class="list-group-item">
-              <img src="/images/TamanKambangIwak.jpg" alt="Taman Kambang Iwak">
-              <h5>Paket Wisata Ceria Palembang</h5>
-              <p><b>Harga Paket</b><br>Rp 3.000.000 / orang</p>
-              <div class="infoSelengkapnya" onclick="toggleInfo(this)">
-                Informasi selengkapnya
-              </div>
-              <p id="infoPaket4" class="informasi" style="display: none;">
-                <b>Durasi :</b> 3 hari 2 malam<br>
-                <b>Wisata :</b> Taman Kambang Iwak - Kampung Kapitan - Bukit Siguntang - Punti Kayu - GWalk - Sekanak Side Walk<br>
-                <b>Harga termasuk penginapan hotel + breakfast</b>
-              </p>
-            </li>
-            <li class="list-group-item">
-              <img src="/images/Amanzi.jpg" alt="Amanzi">
-              <h5>Paket Wisata dan Kuliner Palembang</h5>
-              <p><b>Harga Paket</b><br>Rp 3.500.000 / orang</p>
-              <div class="infoSelengkapnya" onclick="toggleInfo(this)">
-                Informasi selengkapnya
-              </div>
-              <p id="infoPaket4" class="informasi" style="display: none;">
-                <b>Durasi :</b> 3 hari 2 malam<br>
-                <b>Wisata dan Kuliner :</b> OPI Waterfun - Amanzi Waterpark - Palembang Birdpark - Pempek Beringin - Martabak HAR - Mie Celor 26 Ilir - Pempek Pak Raden - Pindang Sri Melayu - RiverSide<br>
-                <b>Harga termasuk penginapan hotel</b>
-              </p>
-            </li>
-          </ul>
-        
-<div class="mt-4">
+<div class="container">
+  <ul class="list-group list-group-horizontal-md">
     <% listpaketwisata.forEach(paket => { %>
-        <li>
-          <%= paket.nama %> : Rp <%= paket.harga %>
-        </li>
+      <li class="list-group-item">
+        <img src="<%= paket.foto %>">
+        <h5><%= paket.nama %></h5>
+        <p><b>Harga Paket</b><br>Rp <%= paket.harga %> / orang</p>
+        <div class="infoSelengkapnya" onclick="toggleInfo(this)">
+          Informasi selengkapnya
+        </div>
+        <p id="infoPaket1" class="informasi" style="display: none;">
+          <b>Durasi :</b> <%= paket.durasi %><br>
+          <b>Deskripsi :</b> <%= paket.deskripsi %><br>
+        </p>
+      </li>
     <% }) %>
+  </ul>
 </div>

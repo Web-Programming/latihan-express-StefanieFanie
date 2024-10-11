@@ -1,0 +1,34 @@
+<h1>Form Order Paket Wisata</h1>
+<form action="/orderdetail" oninput="hitungTotalHarga()" method="POST">
+    <div class="mb-3">
+        <label for="nama" class="form-label">Nama</label>
+        <input type="text" class="form-control" id="nama" name="nama" placeholder="Masukkan nama Anda" required>
+    </div>
+    <div class="mb-3">
+        <label for="email" class="form-label">Email</label>
+        <input type="email" class="form-control" id="email" name="email" placeholder="Masukkan email Anda" required>
+    </div>
+    <div class="mb-3">
+    <label for="selectPaketWisata" class="form-label">Paket Wisata</label>
+    <select class="form-select" id="selectPaketWisata" name="selectPaketWisata" aria-label="Default select example">
+        <% listpaketwisata.forEach(function(paket, index) { %>
+            <option value="<%= index %>" data-harga="<%= paket.harga %>"><%= paket.nama %></option>
+        <% }); %>
+    </select>
+    </div>
+    <div class="mb-3">
+    <label for="jumlah" class="form-label">Jumlah</label>
+    <input type="number" class="form-control" id="jumlah" name="jumlah" placeholder="Masukkan jumlah paket yang ingin dipesan" required>
+    </div>
+    <div class="mb-3">
+    <label for="harga" class="form-label">Harga per Orang</label>
+    <input type="number" class="form-control" id="harga" name="harga" readonly>
+    </div>
+    <div class="mb-3">
+    <label for="hargaTotal" class="form-label">Total Harga</label>
+    <input type="number" class="form-control" id="hargaTotal" name="hargaTotal" readonly>
+    </div>
+    <div class="mb-3">
+    <button type="submit" class="btn btn-outline-dark">Order Paket dan Lihat Detail Order</button><br><br>
+    </div>
+</form>
