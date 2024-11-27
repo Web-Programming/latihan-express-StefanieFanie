@@ -12,4 +12,22 @@ const Index = async(req, res) => {
     }
 }
 
-module.exports = { Index }
+const Show = (req, res, next) => {
+    const id = parseInt(req.params.id);
+    Housing
+        .findOne({id:(parseInt(req.params.id))})
+        .then((housing) =>{
+            const responseMessage = housing;
+            res.status(200).json(responseMessage);
+        })
+        .catch((e) => {
+            const responseMessage = {
+                code: 404,
+                success: false,
+                message: "ID " + req.params.id + " Not Found",
+            };
+            res.status(404).json(responseMessage);
+        });
+};
+
+module.exports = { Index, Show }

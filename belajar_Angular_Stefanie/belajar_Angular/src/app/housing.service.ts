@@ -6,6 +6,7 @@ import { HousingLocation } from './housing-location';
 })
 export class HousingService {
   url = "http://localhost:3000/housing";
+  readonly baseUrl = 'https://angular.io/assets/images/tutorials/faa';
   constructor() { }
 
   async getAllHousingLocations() : Promise<HousingLocation[]>{
@@ -19,6 +20,25 @@ export class HousingService {
   }
 
   submitApplication(firstName: String, lastName: String, email: String){
-    console.log(firstName, lastName, email);
+    const apiurl = "http://localhost:3000/insert/register";
+    const data = fetch(apiurl, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        firstname: firstName,
+        lastname: lastName,
+        email: email
+      })
+    });
+    return data.then(response => {
+      if(!response.ok){
+        throw new Error("Submit Application Failed");
+      }else{
+        alert("Submit Application Success");
+      }
+      return response.json();
+    });
   }
 }
